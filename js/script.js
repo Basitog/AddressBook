@@ -71,3 +71,16 @@ function attachContactListeners() {
     displayContactDetails(addressBook);
   });
 }
+
+function showContact(contactId) {
+  const contact = addressBook.findContact(contactId);
+  $("#show-contact").show();
+  $(".first-name").html(contact.firstName);
+  $(".last-name").html(contact.lastName);
+  $(".phone-number").html(contact.phoneNumber);
+  $(".email-address").html(contact.emailAddress);
+  $(".home-address").html(contact.homeAddress);
+  let buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button class='btn btn-danger' id=" +  + contact.id + ">Delete</button>");
+ }
