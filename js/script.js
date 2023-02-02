@@ -84,3 +84,24 @@ function showContact(contactId) {
   buttons.empty();
   buttons.append("<button class='btn btn-danger' id=" +  + contact.id + ">Delete</button>");
  }
+
+ // User Interface Logic //
+let addressBook = new AddressBook();
+
+$(document).ready(function() {
+  attachContactListeners();
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
+    const inputtedFirstName = $("input#new-first-name").val();
+    const inputtedLastName = $("input#new-last-name").val();
+    const inputtedPhoneNumber = $("input#new-phone-number").val();
+    const inputtedEmailAddress = $("input#new-email-address").val();
+    const inputtedHomeAddress = $("input#new-home-address").val();
+  
+
+    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedHomeAddress);
+    addressBook.addContact(newContact);
+    let mycontact = displayContactDetails(addressBook);
+  $("#contacts").html(mycontact)
+  });
+});
