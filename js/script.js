@@ -60,3 +60,14 @@ function displayContactDetails(addressBookToDisplay) {
   });
   contactsList.html(htmlForContactInfo);
 }
+
+function attachContactListeners() {
+  $("ul#contacts").on("click", "li", function() {
+    showContact (this.id);
+  });
+  $("#buttons").on("click", "button", function() {
+    addressBook.deleteContact(this.id);
+    $("#show-contact").hide();
+    displayContactDetails(addressBook);
+  });
+}
