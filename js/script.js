@@ -36,3 +36,17 @@ function Contact(firstName, lastName, phoneNumber, emailAddress, homeAddress) {
   this.emailAddress = emailAddress;
   this.homeAddress = homeAddress;
 }
+
+Contact.prototype.fullName = function() {
+  return this.firstName + " " + this.lastName;
+}
+
+function displayContact(addressBook){
+  let contactids = object.keys(addressBook.contacts);
+  let mylis = "";
+  contactids.forEach(function (id){
+    let contact = adressBook.findContact(id);
+    mylis = mylis.concat("<li>", contact.firstName, " ", contact.lastName, "</li>")
+  })
+  return mylis;
+}
