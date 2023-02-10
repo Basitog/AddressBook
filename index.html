@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,49 +11,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div class="container">
-    <h1>Address Book</h1>    
-      <div class="col-md-12">
-        <h2>Add A Specific Contact:</h2>
+    <img class="img1" src="img/addr2.png" alt="">
+    <h1 class="img1"><strong>ADDRESS-<span id="color">BOOK</span></strong></h1>
+
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-sm-6">
+        <!-- <h2>Add A Specific Contact:</h2> -->
         <form id="new-contact">
           <div class="form-group">
-            <label for="new-first-name">First Name</label>
-            <input type="text"  class="form-control" id="new-first-name">
+            <label for="new-first-name"><b>First Name</b></label>
+            <input type="text" class="form-control" id="new-first-name">
+            <img class="img2" src="img/name1.png" alt="">
           </div>
           <div class="form-group">
-            <label for="new-last-name">Last Name</label>
-            <input type="text"  class="form-control" id="new-last-name">
+            <label for="new-last-name"><b>Last Name</b></label>
+            <input type="text" class="form-control" id="new-last-name">
+            <img class="img2" src="img/name1.png" alt="">
           </div>
           <div class="form-group">
-            <label for="new-phone-number">Phone Number</label>
-            <input type="text"  class="form-control" id="new-phone-number">
+            <label for="new-phone-number"><b>Phone Number</b></label>
+            <input type="text" class="form-control" id="new-phone-number">
+            <img class="img2" src="img/phone.png" alt="">
           </div>
+
           <div class="form-group">
-            <label for="new-email-address">Email Address</label>
-            <input type="text"  class="form-control" id="new-email-address">
+            <label for="new-email-address"><b>Email Address</b></label>
+            <input type="text" class="form-control" id="new-email-address">
+            <img class="img2" src="img/email.png" alt="">
           </div>
-          <div class="form-group">
-            <label for="home-address">Home Address</label>
-            <input type="text"  class="form-control" id="new-home-address">
+
+          <div id="work">
+            <h4><strong>Work</strong></h4>
+            <div class="work-address1">
+              <div class="form-group">
+                <label for="new-street"><b>Street</b></label>
+                <input type="text" class="form-control work-street">
+                <img class="img2" src="img/work.jpg" alt="">
+              </div>
+              <div class="form-group">
+                <label for="new-city"><b>City</b></label>
+                <input type="text" class="form-control work-city">
+                <img class="img2" src="img/city.jpg" alt="">
+              </div>
+              <div class="form-group">
+                <label for="new-state"><b>State</b></label>
+                <input type="text" class="form-control work-state">
+                <img class="img2" src="img/str.png" alt="">
+              </div>
+            </div>
           </div>
-          <button type="submit" class="btn-primary">Add</button>
+
+          <div id="home">
+            <h4 class="img3" id="word"><strong>Home</strong></h4>
+            <img class="img3" id="size" src="img/home.png" alt="">
+            <div class="home-address1">
+              <div class="form-group">
+                <label for="new-street"><b>Street</b></label>
+                <input type="text" class="form-control home-street">
+              </div>
+              <div class="form-group">
+                <label for="new-city"><b>City</b></label>
+                <input type="text" class="form-control home-city">
+              </div>
+              <div class="form-group">
+                <label for="new-state"><b>State</b></label>
+                <input type="text" class="form-control home-state">
+              </div>
+            </div>
+          </div>
+
+          <div id="school">
+            <h4 class="img4"><strong>School</strong></h4>
+            <img class="img4" id="size1" src="img/school.png" alt="">
+            <div class="school-address1">
+              <div class="form-group">
+                <label for="new-street"><b>Street</b></label>
+                <input type="text" class="form-control school-street">
+              </div>
+              <div class="form-group">
+                <label for="new-city"><b>City</b></label>
+                <input type="text" class="form-control school-city">
+              </div>
+              <div class="form-group">
+                <label for="new-state"><b>State</b></label>
+                <input type="text" class="form-control school-state">
+              </div>
+            </div>
+          </div>
+
+          <br> <br> <button type="submit" class="btn btn-success">Add</button>
+
+          <button type="reset" value="reset" class="btn btnreset btn-danger"
+            onclick='window.location.reload()'>Refresh</button>
         </form>
-        <h2>Contacts:</h2>
-        <ul id="contacts">
-        </ul>
+        <br> <button type="button" class="btn btn-secondary" id="workButton">Add Work Address</button>
+        <button type="button" class="btn btn-secondary" id="homeButton">Add Home Address</button>
+        <button type="button" class="btn btn-secondary" id="schoolButton">Add School Address</button>
+
+
       </div>
-      <div class="col-md-6">
-        <div id="show-contact">
-          <p>First Name: <span class="first-name"></span></p>
-          <p>Last Name: <span class="last-name"></span></p>
-          <p>Phone Number: <span class="phone-number"></span></p>
-          <p>Email Address: <span class="email-address"></span></p>
-          <p>Phone Number: <span class="home-address"></span></p>
-          <div id="buttons">
-          </div>
+
+      <div class="col-md-6 col-lg-6 col-sm-6" id="dd">
+        <h2>Contacts:</h2>
+        <div class="prac">
+          <ul id="contacts">
+          </ul>
+       </div>
+
+        <div id="show-contact" class="result">
+
+          <p><b>First Name:</b> <span class="first-name"></span></p>
+          <p><b>Last Name:</b> <span class="last-name"></span></p>
+          <p><b>Phone Number:</b> <span class="phone-number"></span></p>
+          <p><b>Email Address:</b><span class="email"></span></p>
+          <p>
+            <li id="lis"><span class="para">Work Address:</span> <span class="work-address"></span></li>
+          </p>
+          <p>
+            <li id="lis"><span class="para">School Address:</span> <span class="school-address"></span></li>
+          </p>
+          <p>
+            <li id="lis"><span class="para">Home Address:</span> <span class="home-address"></span></li>
+          </p>
+
+          <div id="buttons" class="btn btn-danger"></div>
+          <div id="buttonsEdit" class="btn btn-success"></div>
+
+
         </div>
       </div>
+    </div>
   </div>
 </body>
+
 </html>
